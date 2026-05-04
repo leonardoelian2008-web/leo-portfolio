@@ -85,10 +85,20 @@ const dummyProjects = [
   {
     title: "IMLEK 2025",
     description:
-      "Sebuah event tahunan sekolah di setiap bulan Desember. Classmeeting 2025 basket",
-    tech: ["Event Osis, sekolah"],
+      "Sebuah event yang dilaksanakan tahunan, untuk merayakan adat chinese yaitu Imlek",
+    tech: ["Event, sekolah"],
     link: "https://drive.google.com/drive/folders/1Dxu9726n4P7ZaxkU0R7NVJptAkPO70V2?usp=sharing",
     image: "https://i.postimg.cc/5yD7jq5F/IMG-4130-26.jpg",
+    imagePosition: "center 50%",
+    category: "Web/Apps",
+  },
+  {
+    title: "GRADUATION 2025",
+    description:
+      "Sebuah Acara penghargaan bagi anak kelas 12 yang sudah lulus dari SMA ISR",
+    tech: ["Event, sekolah"],
+    link: "https://drive.google.com/drive/folders/1hNJpJ5LRB_nTk8gI3s_4S1SUoWLJY5Cq?usp=sharing",
+    image: "https://i.postimg.cc/fRbrRyhQ/IMG-8000-91.jpg",
     imagePosition: "center 50%",
     category: "Web/Apps",
   },
