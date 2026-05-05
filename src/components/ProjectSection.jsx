@@ -102,15 +102,24 @@ const dummyProjects = [
     imagePosition: "center 50%",
     category: "Web/Apps",
   },
+  {
+    title: "IMPASSIONED ISR 2025 (HOTEL RESINDA)",
+    description:
+      "Sebuah Acara tahunan yang diadakan oleh komplek ISR Resinda Karawang",
+    tech: ["Event, sekolah"],
+    link: "https://drive.google.com/drive/folders/1f-VDZ6yny3QxBfeyE2AfWACdbKbMpePU?usp=sharing",
+    image: "https://i.postimg.cc/Xqf3bXcV/IMG-3798-115.jpg",
+    imagePosition: "center 50%",
+    category: "Web/Apps",
+  },
 
   {
-    title: "3D Product Visualization",
-    description:
-      "Desain 3D interaktif untuk showcase produk menggunakan Spline dan Blender.",
-    tech: ["Spline", "Blender"],
-    link: "#",
-    image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop",
+    title: "sound Kabaret",
+    description: "berbagai sound kabaret yang ditampilkan setiap event",
+    tech: ["Sound, Audacity"],
+    link: "https://drive.google.com/drive/folders/1T8--hPXOMSYfW6JgXw4LBbicdC75TqTX?usp=sharing",
+    image: "https://i.postimg.cc/02zrL0hX/IMG-4763-116.jpg",
+    imagePosition: "center 30%",
     category: "3D Design",
   },
   {
@@ -882,11 +891,17 @@ function ProjectSection() {
                         className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === "Web/Apps" ? "bg-blue-700/80 text-white border-blue-400 shadow-blue-500/10 shadow-lg" : "bg-slate-900/60 text-blue-200 border-slate-700 hover:bg-blue-800/40 hover:text-white"}`}
                         onClick={() => setProjectCategory("Web/Apps")}
                       >
-                        Foto & Sound
+                        Foto
                       </button>
                       <button
                         className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === "3D Design" ? "bg-blue-700/80 text-white border-blue-400 shadow-blue-500/10 shadow-lg" : "bg-slate-900/60 text-blue-200 border-slate-700 hover:bg-blue-800/40 hover:text-white"}`}
                         onClick={() => setProjectCategory("3D Design")}
+                      >
+                        Sound
+                      </button>
+                      <button
+                        className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === "sound" ? "bg-blue-700/80 text-white border-blue-400 shadow-blue-500/10 shadow-lg" : "bg-slate-900/60 text-blue-200 border-slate-700 hover:bg-blue-800/40 hover:text-white"}`}
+                        onClick={() => setProjectCategory("Sound")}
                       >
                         Video
                       </button>
