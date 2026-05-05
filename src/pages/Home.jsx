@@ -82,19 +82,6 @@ const Home = () => {
         transition={{ duration: 0.5 }}
         className="relative z-10 px-8 max-w-7xl mx-auto w-full"
       >
-        <button
-          onClick={toggle3dAssets}
-          title={`Toggle 3D Assets (${is3dEnabled ? "On" : "Off"})`}
-          className={`fixed top-24 right-4 z-50 p-3 rounded-full border backdrop-blur-sm transition-all duration-300 ease-in-out hover:scale-110
-          ${
-            is3dEnabled
-              ? "bg-blue-500/20 border-blue-400 text-blue-300 shadow-[0_0_12px_2px_#00ffdc80]"
-              : "dark:bg-slate-800/50 dark:border-slate-700 dark:text-slate-400 bg-white border-slate-200 text-slate-600 shadow-sm"
-          }`}
-        >
-          <FaCube className="h-5 w-5" />
-        </button>
-
         <section
           id="home"
           className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 pt-0 pb-0"

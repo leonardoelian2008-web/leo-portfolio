@@ -233,46 +233,6 @@ const userCertificates = [
   },
 ];
 
-const techStack = {
-  frontend: [
-    { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
-    {
-      name: "Next.js",
-      icon: <SiNextdotjs className="dark:text-white text-slate-900" />,
-    },
-    { name: "JavaScript", icon: <FaJsSquare className="text-[#F7DF1E]" /> },
-    {
-      name: "Tailwind CSS",
-      icon: <SiTailwindcss className="text-[#38B2AC]" />,
-    },
-    { name: "HTML5", icon: <FaHtml5 className="text-[#E34F26]" /> },
-    { name: "CSS3", icon: <FaCss3Alt className="text-[#1572B6]" /> },
-  ],
-  backend: [
-    { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
-    {
-      name: "Express",
-      icon: <SiExpress className="dark:text-white text-slate-900" />,
-    },
-  ],
-  database: [
-    { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
-    { name: "PostgreSQL", icon: <SiPostgresql className="text-[#336791]" /> },
-  ],
-  tools: [
-    {
-      name: "Git & GitHub",
-      icon: <FaGithub className="dark:text-white text-slate-900" />,
-    },
-    {
-      name: "Vercel",
-      icon: <SiVercel className="dark:text-white text-slate-900" />,
-    },
-    { name: "Figma", icon: <FaFigma className="text-[#F24E1E]" /> },
-    { name: "Tools Lain", icon: <FaTools className="text-gray-400" /> },
-  ],
-};
-
 const apps = [
   { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
   { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
@@ -280,6 +240,55 @@ const apps = [
   { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" /> },
   { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
   { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
+];
+const editingApps = [
+  {
+    name: "CapCut",
+    icon: <img src="public/icons/capcut.png" className="w-7 h-7" />,
+  },
+  {
+    name: "Canva",
+    icon: <img src="public/icons/canva.png" className="w-7 h-7" />,
+  },
+  {
+    name: "Lightroom",
+    icon: <img src="public/icons/lightroom.png" className="w-7 h-7" />,
+  },
+  {
+    name: "Premiere Pro",
+    icon: <img src="public/icons/premiere.png" className="w-7 h-7" />,
+  },
+  {
+    name: "Audacity",
+    icon: <img src="public/icons/audacity.png" className="w-7 h-7" />,
+  },
+];
+
+const frontendApps = [
+  {
+    name: "React",
+    icon: <img src="/icons/react.png" className="w-7 h-7" />,
+  },
+  {
+    name: "Next.js",
+    icon: <img src="/icons/nextjs.png" className="w-7 h-7" />,
+  },
+  {
+    name: "JavaScript",
+    icon: <img src="/icons/javascript.png" className="w-7 h-7" />,
+  },
+  {
+    name: "Tailwind",
+    icon: <img src="/icons/tailwind.png" className="w-7 h-7" />,
+  },
+  {
+    name: "HTML",
+    icon: <img src="/icons/html.png" className="w-7 h-7" />,
+  },
+  {
+    name: "CSS",
+    icon: <img src="/icons/css.png" className="w-7 h-7" />,
+  },
 ];
 
 // ===================================
@@ -1032,23 +1041,47 @@ function ProjectSection() {
                 </div>
               )}
               {activeTab === "Tech Stack" && (
-                <div className="max-w-4xl mx-auto">
-                  <h3 className="text-sm font-bold text-blue-300 uppercase tracking-widest mb-6">
-                    Editing
-                  </h3>
+                <div className="max-w-4xl mx-auto space-y-10">
+                  {/* EDITING */}
+                  <div>
+                    <h3 className="text-sm font-bold text-blue-300 uppercase tracking-widest mb-6">
+                      EDITING
+                    </h3>
 
-                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
-                    {apps.map((app, i) => (
-                      <div
-                        key={i}
-                        className="group flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-slate-900/60 border border-slate-700 hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-blue-500/20"
-                      >
-                        <div className="text-2xl">{app.icon}</div>
-                        <p className="text-xs text-slate-300 text-center">
-                          {app.name}
-                        </p>
-                      </div>
-                    ))}
+                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+                      {editingApps.map((app, i) => (
+                        <div
+                          key={i}
+                          className="group flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-slate-900/60 border border-slate-700 hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-blue-500/20"
+                        >
+                          <div className="text-2xl">{app.icon}</div>
+                          <p className="text-xs text-slate-300 text-center">
+                            {app.name}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* FRONT END */}
+                  <div>
+                    <h3 className="text-sm font-bold text-blue-300 uppercase tracking-widest mb-6">
+                      FRONT END
+                    </h3>
+
+                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+                      {frontendApps.map((app, i) => (
+                        <div
+                          key={i}
+                          className="group flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-slate-900/60 border border-slate-700 hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-blue-500/20"
+                        >
+                          <div className="text-2xl">{app.icon}</div>
+                          <p className="text-xs text-slate-300 text-center">
+                            {app.name}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}

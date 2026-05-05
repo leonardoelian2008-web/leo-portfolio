@@ -228,9 +228,6 @@ const Header = () => {
                   <ul className="justify-self-start flex items-center list-none gap-8 lg:gap-10">
                     <NavLink href="#home">Home</NavLink>
                     <NavLink href="#projects">Project</NavLink>
-                    <NavLink href="/gallery" isGallery>
-                      Gallery
-                    </NavLink>
                   </ul>
 
                   {/* Desktop: Center Logo & Text (Center) */}
@@ -239,11 +236,6 @@ const Header = () => {
                     onClick={(e) => handleNavClick(e, "#home")}
                     className="justify-self-center flex items-center gap-3"
                   >
-                    <img
-                      src={bangzenLogo}
-                      alt="Bangzen Logo"
-                      className="h-12 w-12"
-                    />
                     <div className="block">
                       <motion.h1
                         className="font-moderniz text-base"
