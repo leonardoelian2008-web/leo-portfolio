@@ -53,6 +53,13 @@ const Home = () => {
 
   const stats = [
     {
+      icon: <FaGlobe />,
+      value: "4",
+      title: "YEARS OF EXPERIENCE",
+      description: "Masih dalam tahap belajar",
+    },
+
+    {
       icon: <FaCode />,
       value: "2",
       title: "TOTAL PROJECTS",
@@ -63,12 +70,6 @@ const Home = () => {
       value: "0",
       title: "CERTIFICATES",
       description: "Gak ada",
-    },
-    {
-      icon: <FaGlobe />,
-      value: "4",
-      title: "YEARS OF EXPERIENCE",
-      description: "Masih dalam tahap belajar",
     },
   ];
 

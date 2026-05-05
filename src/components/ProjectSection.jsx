@@ -1,5 +1,6 @@
 // src/components/ProjectSection.jsx
-import React, { useState, useEffect } from "react";
+import BorderGlow from "./BorderGlow";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaExternalLinkAlt,
@@ -34,43 +35,43 @@ import { supabase } from "../lib/supabase";
 const dummyProjects = [
   //update
   {
-    title: "Imlek 2026",
+    title: "IMLEK 2026",
     description:
       "Sebuah Event Imlek yang diabadikan dengan kamera Canon Eos 800d😊",
     tech: ["Imlek, chinese"],
     link: "https://drive.google.com/drive/folders/1zJDklNTancSRfeyAjkf23b6XxQiOI-O_?usp=sharing",
     image: "https://user8796.na.imgto.link/public/20260420/img-0216-163.avif",
     imagePosition: "center 30%",
-    category: "Web/Apps",
+    category: "Foto",
   },
 
   {
-    title: "Komsos Marinus",
+    title: "KOMSOS MARINUS",
     description: "sebuah beberapa folder dokumentasi foto yang ada di Gereja ",
     tech: ["Gereja, Komsos"],
     link: "https://drive.google.com/drive/folders/1HhnlP3fP_v39Ph4ytjnXTgEMzOIp2b5_?usp=sharing",
     image: "https://i.postimg.cc/fbst8Tbb/IMG-7640.jpg",
-    category: "Web/Apps",
+    category: "Foto",
   },
   {
-    title: "Music Colaboration #2",
+    title: "MUSIC COLABORATION #2",
     description:
       "Sebuah event yang dilaksanakan malam dan juga seperti event konser",
     tech: ["Musik, sekolah"],
     link: "https://drive.google.com/drive/folders/1a21b60OZiaS1vt-fs4T4YJPQ0G1LN_sh?usp=sharing",
     image: "https://i.postimg.cc/CKhhrFGz/IMG-4739-113.jpg",
     imagePosition: "center 35%",
-    category: "Web/Apps",
+    category: "Foto",
   },
   {
-    title: "Classmeeting December 2025",
+    title: "CLASSMEETING DESEMBER 2025",
     description:
       "Sebuah event tahunan sekolah di setiap bulan Desember. Classmeeting 2025 basket",
     tech: ["Event Osis, sekolah"],
     link: "https://drive.google.com/drive/folders/18Pwhoal5zDpIFrKTreuCBsshFx0yq7uh?usp=sharing",
     image: "https://i.postimg.cc/Nf7f6NVd/IMG-1126-137.jpg",
     imagePosition: "center 35%",
-    category: "Web/Apps",
+    category: "Foto",
   },
   {
     title: "VISITASI SEKOLAH TALENTA PWK & P5",
@@ -80,7 +81,7 @@ const dummyProjects = [
     link: "https://drive.google.com/drive/folders/10KV18s5NqWRrGPWtoEPjU6jx8SbYBFNZ?usp=sharing",
     image: "https://i.postimg.cc/Kc7Rfv3N/IMG-1220-44.jpg",
     imagePosition: "center 25%",
-    category: "Web/Apps",
+    category: "Foto",
   },
   {
     title: "IMLEK 2025",
@@ -90,7 +91,7 @@ const dummyProjects = [
     link: "https://drive.google.com/drive/folders/1Dxu9726n4P7ZaxkU0R7NVJptAkPO70V2?usp=sharing",
     image: "https://i.postimg.cc/5yD7jq5F/IMG-4130-26.jpg",
     imagePosition: "center 50%",
-    category: "Web/Apps",
+    category: "Foto",
   },
   {
     title: "GRADUATION 2025",
@@ -100,7 +101,7 @@ const dummyProjects = [
     link: "https://drive.google.com/drive/folders/1hNJpJ5LRB_nTk8gI3s_4S1SUoWLJY5Cq?usp=sharing",
     image: "https://i.postimg.cc/fRbrRyhQ/IMG-8000-91.jpg",
     imagePosition: "center 50%",
-    category: "Web/Apps",
+    category: "Foto",
   },
   {
     title: "IMPASSIONED ISR 2025 (HOTEL RESINDA)",
@@ -110,31 +111,31 @@ const dummyProjects = [
     link: "https://drive.google.com/drive/folders/1f-VDZ6yny3QxBfeyE2AfWACdbKbMpePU?usp=sharing",
     image: "https://i.postimg.cc/Xqf3bXcV/IMG-3798-115.jpg",
     imagePosition: "center 50%",
-    category: "Web/Apps",
+    category: "Foto",
   },
 
   {
-    title: "sound Kabaret",
+    title: "SOUND KABARET",
     description: "berbagai sound kabaret yang ditampilkan setiap event",
     tech: ["Sound, Audacity"],
     link: "https://drive.google.com/drive/folders/1T8--hPXOMSYfW6JgXw4LBbicdC75TqTX?usp=sharing",
     image: "https://i.postimg.cc/02zrL0hX/IMG-4763-116.jpg",
     imagePosition: "center 30%",
-    category: "3D Design",
+    category: "Sound",
   },
   {
-    title: "Animated 3D Landing",
-    description: "Landing page dengan elemen 3D animasi untuk branding modern.",
-    tech: ["Spline", "Three.js"],
-    link: "#",
-    image:
-      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=2070&auto=format&fit=crop",
-    category: "3D Design",
+    title: "REELS VIDEO IMLEK",
+    description: "Video singkat tentang event imlek dengan lagu Perunggu 33x",
+    tech: ["Perunggu, Editing, Video"],
+    link: "https://drive.google.com/file/d/1RYVbfutBrX_6u0v3o-_vzzi4Fy1mcATA/view?usp=sharing",
+    image: "https://i.postimg.cc/fWx2w9pn/Screenshot-2026-05-05-223145.png",
+    imagePosition: "center 0%",
+    category: "Video",
   },
 ];
 
 // ===================================
-// DATA SERTIFIKAT ZAIN AHMAD FAHREZI
+// DATA SERTIFIKAT king leo
 // ===================================
 const userCertificates = [
   {
@@ -271,6 +272,15 @@ const techStack = {
     { name: "Tools Lain", icon: <FaTools className="text-gray-400" /> },
   ],
 };
+
+const apps = [
+  { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
+  { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
+  { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
+  { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" /> },
+  { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
+  { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
+];
 
 // ===================================
 // HELPER & ANIMATION COMPONENTS
@@ -622,8 +632,9 @@ const CertificatePreviewModal = ({ certificate, onClose }) => {
 // KOMPONEN UTAMA SECTION PROJECT
 // ===================================
 function ProjectSection() {
+  const sectionRef = useRef(null);
   const [activeTab, setActiveTab] = useState("Projects");
-  const [projectCategory, setProjectCategory] = useState("Web/Apps");
+  const [projectCategory, setProjectCategory] = useState("Foto");
   const [previewCertificate, setPreviewCertificate] = useState(null);
   const [previewProject, setPreviewProject] = useState(null); // ✨ NEW STATE
   const { hideNavbar, showNavbar } = useNavbar();
@@ -741,7 +752,7 @@ function ProjectSection() {
     },
     {
       id: "Tech Stack",
-      label: "Tech Stack",
+      label: "APP",
       icon: <LiaLayerGroupSolid className="text-[1.5em] mb-1" />,
     },
   ];
@@ -803,7 +814,7 @@ function ProjectSection() {
   // === CHANGE END ===
 
   return (
-    <section id="project" className="py-20">
+    <section id="project" ref={sectionRef} className="py-20">
       <style>{`
         @keyframes line-shadow-anim { 0% { background-position: 0 0; } 100% { background-position: 100% 100%; } }
         .line-shadow-effect::after { content: attr(data-text); position: absolute; z-index: -1; left: 0.04em; top: 0.04em; background-image: linear-gradient(45deg, transparent 45%, var(--shadow-color) 45%, var(--shadow-color) 55%, transparent 0); background-size: 0.06em 0.06em; -webkit-background-clip: text; background-clip: text; color: transparent; animation: line-shadow-anim 30s linear infinite; }
@@ -829,40 +840,36 @@ function ProjectSection() {
 
       <div className="w-full">
         <div className="flex justify-center mb-12">
-          <motion.div
-            layout
-            className="inline-flex w-full max-w-4xl rounded-3xl p-2 shadow-lg border dark:border-slate-800 border-slate-200 dark:bg-gradient-to-r dark:from-[#101624] dark:via-[#0a1627] dark:to-[#0a223a] bg-white backdrop-blur-md"
-            style={{
-              boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.18)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
-            }}
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl">
             {tabs.map((tab) => (
-              <motion.button
+              <BorderGlow
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`relative flex flex-1 flex-col items-center justify-center px-2 py-7 rounded-2xl font-semibold text-base transition-colors duration-300 outline-none ${activeTab === tab.id ? "dark:text-white text-slate-900" : "text-slate-400 hover:text-blue-600 dark:hover:text-blue-300"}`}
-                whileTap={{ scale: 0.97 }}
-                whileHover={{ scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                style={{ zIndex: 1, minWidth: 0 }}
+                className="w-full"
+                borderRadius={16}
+                glowColor="220 90 60"
+                glowRadius={25}
+                glowIntensity={0.8}
               >
-                {activeTab === tab.id && (
-                  <motion.span
-                    layoutId="tab-underline"
-                    className="absolute inset-0 dark:bg-gradient-to-br dark:from-[#0a223a] dark:to-[#101624] bg-slate-100 rounded-2xl border dark:border-transparent border-slate-200"
-                    transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
-                    style={{ zIndex: -1, opacity: 0.96 }}
-                  />
-                )}
-                <span className="relative z-10 flex flex-col items-center gap-2">
-                  {tab.icon}
-                  <span className="font-bold">{tab.label}</span>
-                </span>
-              </motion.button>
+                <motion.button
+                  onClick={() => setActiveTab(tab.id)}
+                  whileTap={{ scale: 0.96 }}
+                  whileHover={{ scale: 1.04, y: -3 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className={`w-full rounded-2xl px-4 py-6 text-center transition-all duration-300
+          ${
+            activeTab === tab.id
+              ? "bg-[#0a1f3d] text-white"
+              : "bg-slate-900/60 text-slate-400 hover:text-white"
+          }`}
+                >
+                  <div className="flex flex-col items-center gap-2">
+                    <span className="text-2xl">{tab.icon}</span>
+                    <span className="font-semibold text-sm">{tab.label}</span>
+                  </div>
+                </motion.button>
+              </BorderGlow>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         <div
@@ -888,20 +895,34 @@ function ProjectSection() {
                   {projectsFromDB.length === 0 && (
                     <div className="flex justify-center gap-4 mb-8">
                       <button
-                        className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === "Web/Apps" ? "bg-blue-700/80 text-white border-blue-400 shadow-blue-500/10 shadow-lg" : "bg-slate-900/60 text-blue-200 border-slate-700 hover:bg-blue-800/40 hover:text-white"}`}
-                        onClick={() => setProjectCategory("Web/Apps")}
+                        className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${
+                          projectCategory === "Foto"
+                            ? "bg-blue-700/80 text-white border-blue-400 shadow-blue-500/10 shadow-lg"
+                            : "bg-slate-900/60 text-blue-200 border-slate-700 hover:bg-blue-800/40 hover:text-white"
+                        }`}
+                        onClick={() => setProjectCategory("Foto")}
                       >
                         Foto
                       </button>
+
                       <button
-                        className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === "3D Design" ? "bg-blue-700/80 text-white border-blue-400 shadow-blue-500/10 shadow-lg" : "bg-slate-900/60 text-blue-200 border-slate-700 hover:bg-blue-800/40 hover:text-white"}`}
-                        onClick={() => setProjectCategory("3D Design")}
+                        className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${
+                          projectCategory === "Sound"
+                            ? "bg-blue-700/80 text-white border-blue-400 shadow-blue-500/10 shadow-lg"
+                            : "bg-slate-900/60 text-blue-200 border-slate-700 hover:bg-blue-800/40 hover:text-white"
+                        }`}
+                        onClick={() => setProjectCategory("Sound")}
                       >
                         Sound
                       </button>
+
                       <button
-                        className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === "sound" ? "bg-blue-700/80 text-white border-blue-400 shadow-blue-500/10 shadow-lg" : "bg-slate-900/60 text-blue-200 border-slate-700 hover:bg-blue-800/40 hover:text-white"}`}
-                        onClick={() => setProjectCategory("Sound")}
+                        className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${
+                          projectCategory === "Video"
+                            ? "bg-blue-700/80 text-white border-blue-400 shadow-blue-500/10 shadow-lg"
+                            : "bg-slate-900/60 text-blue-200 border-slate-700 hover:bg-blue-800/40 hover:text-white"
+                        }`}
+                        onClick={() => setProjectCategory("Video")}
                       >
                         Video
                       </button>
@@ -1011,27 +1032,24 @@ function ProjectSection() {
                 </div>
               )}
               {activeTab === "Tech Stack" && (
-                <div className="max-w-4xl mx-auto space-y-8">
-                  {Object.entries(techStack).map(([category, techs]) => (
-                    <div key={category}>
-                      <h3 className="text-xl font-bold dark:text-blue-300 text-blue-600 capitalize mb-4 border-b-2 dark:border-slate-800 border-slate-200 pb-2">
-                        {category}
-                      </h3>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                        {techs.map((tech, i) => (
-                          <div
-                            key={i}
-                            className="flex flex-col items-center justify-center gap-3 p-4 rounded-xl dark:bg-slate-900/70 bg-white border dark:border-slate-800 border-slate-100 transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-blue-500/30 dark:shadow-none shadow-md hover:shadow-lg dark:hover:shadow-none"
-                          >
-                            <div className="text-4xl">{tech.icon}</div>
-                            <p className="text-sm dark:text-slate-300 text-slate-600">
-                              {tech.name}
-                            </p>
-                          </div>
-                        ))}
+                <div className="max-w-4xl mx-auto">
+                  <h3 className="text-sm font-bold text-blue-300 uppercase tracking-widest mb-6">
+                    Editing
+                  </h3>
+
+                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+                    {apps.map((app, i) => (
+                      <div
+                        key={i}
+                        className="group flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-slate-900/60 border border-slate-700 hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-blue-500/20"
+                      >
+                        <div className="text-2xl">{app.icon}</div>
+                        <p className="text-xs text-slate-300 text-center">
+                          {app.name}
+                        </p>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               )}
             </motion.div>
