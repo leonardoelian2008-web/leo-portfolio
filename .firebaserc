@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "leo-portfolio-2be8a"
-  }
+    "default": "leo-portfolio-2be8a",
+    "firebase deploy --only hosting": "leo-portfolio23"
+  },
+  "targets": {},
+  "etags": {}
 }
