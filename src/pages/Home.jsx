@@ -23,7 +23,7 @@ import { ButtonMovingBorder } from "../components/MovingBorderButton";
 import ProjectSection from "../components/ProjectSection";
 import Contact from "../components/Contact";
 import { useTheme } from "../contexts/ThemeContext";
-import Leo from "../assets/images/leo.png";
+import Leo from "../assets/images/leodavid.png";
 import ProfileCard from "../components/kartunama/ProfileCard";
 
 const Home = () => {
