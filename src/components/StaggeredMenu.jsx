@@ -451,7 +451,7 @@ export const StaggeredMenu = ({
                   >
                     <a
                       className={`sm-panel-item relative font-semibold text-[3rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[all] duration-150 ease-linear inline-block no-underline pr-[1.4em]
-                                                ${theme === "dark" ? "text-white hover:text-[#00ffdc]" : "text-black hover:text-blue-600"}`}
+                                                ${theme === "dark" ? "text-white hover:text-[#2563eb]" : "text-black hover:text-blue-600"}`}
                       href={it.link}
                       onClick={(e) => {
                         e.preventDefault();

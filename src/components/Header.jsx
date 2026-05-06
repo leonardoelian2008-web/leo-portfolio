@@ -10,8 +10,7 @@ import AdminLogin from "./AdminLogin";
 import AdminDashboard from "./AdminDashboard";
 import { StaggeredMenu } from "./StaggeredMenu";
 
-const CLIP_PATH =
-  "polygon(0 0, 100% 0, 100% 85%, 68% 85%, 64% 100%, 36% 100%, 32% 85%, 0 85%)";
+const CLIP_PATH = "polygon(0 0, 100% 0, 100% 100%, 0 100%)";
 
 const Header = () => {
   // const [isMenuOpen, setIsMenuOpen] = useState(false); // REPLACED BY CONTEXT
@@ -141,7 +140,7 @@ const Header = () => {
                 className="pointer-events-none absolute left-0 right-0 z-10 transition-opacity duration-500"
                 style={{
                   top: "0",
-                  height: "85px",
+                  height: "65px",
                   WebkitClipPath: isMenuOpen ? "none" : CLIP_PATH,
                   clipPath: isMenuOpen ? "none" : CLIP_PATH,
                   background:
@@ -177,7 +176,8 @@ const Header = () => {
                 WebkitClipPath: isMenuOpen ? "none" : CLIP_PATH,
                 clipPath: isMenuOpen ? "none" : CLIP_PATH,
               }}
-              className={`pt-3 ${isMenuOpen ? "pb-0" : "pb-5"} relative z-20 pointer-events-auto transition-all duration-300
+              className={`pt-2 ${isMenuOpen ? "pb-0" : "pb-3"} relative z-20 pointer-events-auto transition-all duration-300 border-b-4 border-cyan-400 lg:border-b-0
+              
                 ${
                   isMenuOpen
                     ? "dark:bg-[#11142F]/80 bg-white/80 backdrop-blur-xl border-b dark:border-white/10 border-slate-200/50 shadow-lg"
@@ -189,7 +189,7 @@ const Header = () => {
               {/* =========== REFACTORED NAVIGATION =========== */}
               <nav className="container mx-auto flex items-center justify-between flex-wrap pb-0 px-1">
                 {/* --- MOBILE HEADER --- */}
-                <div className="w-full flex items-center justify-between md:hidden">
+                <div className="w-full flex items-center justify-between lg:hidden">
                   {/* Mobile: Brand Logo & Text (Left) */}
                   <a
                     href="/"
@@ -202,28 +202,28 @@ const Header = () => {
                       className="h-12 w-12 flex-shrink-0"
                     />
                     <div>
-                      <h1 className="font-moderniz text-sm dark:text-[#00ffdc] text-slate-800 whitespace-nowrap">
+                      <h1 className="font-moderniz text-sm dark:text-blue-400 text-slate-800 whitespace-nowrap">
                         Leonardo David Elian Kusuma
                       </h1>
-                      <p
+                      {/*   <p
                         className="font-moderniz text-[9px] dark:text-[#00ffdc] text-slate-600"
                         style={{ textShadow: "none" }}
                       >
                         Let's see the awesome Experience
-                      </p>
+                      </p> */}
                     </div>
                   </a>
                   {/* Mobile: Hamburger Button (Right) */}
                   <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="dark:text-[#00ffdc] text-slate-800 text-3xl pointer-events-auto"
+                    className="text-blue-400 text-3xl"
                   >
                     &#9776;
                   </button>
                 </div>
 
                 {/* --- DESKTOP HEADER --- */}
-                <div className="hidden w-full md:grid grid-cols-3 items-center px-8 relative min-h-[48px]">
+                <div className="hidden w-full lg:grid grid-cols-3 items-center px-8 relative min-h-[34px]">
                   {/* Desktop: Left Navigation (Start) */}
                   <ul className="justify-self-start flex items-center list-none gap-8 lg:gap-10">
                     <NavLink href="#home">Home</NavLink>
@@ -234,11 +234,11 @@ const Header = () => {
                   <a
                     href="/"
                     onClick={(e) => handleNavClick(e, "#home")}
-                    className="justify-self-center flex items-center gap-3"
+                    className="justify-self-center flex items-center justify-center gap-3 h-full"
                   >
-                    <div className="block">
+                    <div className="flex items-center justify-center text-center h-full">
                       <motion.h1
-                        className="font-moderniz text-base"
+                        className="font-moderniz text-base text-center whitespace-nowrap mt-1"
                         style={{
                           background:
                             "radial-gradient(circle at center, #0033CC, #004BFF, #3366FF, #6699FF, #99CCFF)",
@@ -253,12 +253,12 @@ const Header = () => {
                       >
                         Leonardo David Elian Kusuma
                       </motion.h1>
-                      <p
+                      {/*<p
                         className="font-moderniz text-[10px] dark:text-[hsl(252,100%,52%)] text-slate-600"
                         style={{ textShadow: "none" }}
                       >
                         From Zero to Hero
-                      </p>
+                      </p> */}
                     </div>
                   </a>
 
@@ -279,7 +279,7 @@ const Header = () => {
                       }
                     >
                       <FaShieldAlt
-                        className={`text-lg ${isAuthenticated ? "text-green-500" : "currentColor"}`}
+                        className={`text-lg ${isAuthenticated ? "text-blue-500" : "currentColor"}`}
                       />
                     </button>
                   </div>
@@ -334,7 +334,7 @@ const Header = () => {
         displaySocials={true}
         displayItemNumbering={true}
         colors={["#0891b2", "#06b6d4", "#155e75"]} // blue palette
-        accentColor="#06b6d4"
+        accentColor="#2563eb"
       />
 
       {/* Admin Login Modal */}

@@ -133,7 +133,9 @@ const Home = () => {
               transition={{ duration: 0.7, delay: 0.55, ease: "easeOut" }}
             >
               <TextGenerateEffect
-                words={" Saya membuat apasaja yang bisa saya buat wkkwkw."}
+                words={
+                  " Saya adalah individu yang memiliki ketertarikan tinggi dalam pengembangan keterampilan dan pengalaman profesional. Portofolio ini berisi kumpulan proyek, pencapaian, dan pengalaman yang telah saya kerjakan."
+                }
               />
             </motion.div>
             <motion.div
@@ -385,7 +387,7 @@ hover:border-blue-500 hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-[0_
               </div>
             </motion.div>
 
-            <div className="md:w-1/2 flex justify-end md:absolute md:right-24 md:top-80 ">
+            <div className="w-full md:w-1/2 flex justify-center md:justify-end md:absolute md:right-24 md:top-80">
               <ProfileCard
                 name="Leonardo David Elian kusuma"
                 title="AI & Tech Enthusiast"

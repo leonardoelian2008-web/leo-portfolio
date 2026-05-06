@@ -269,10 +269,7 @@ const frontendApps = [
     name: "React",
     icon: <img src="/icons/react.png" className="w-7 h-7" />,
   },
-  {
-    name: "Next.js",
-    icon: <img src="/icons/nextjs.png" className="w-7 h-7" />,
-  },
+
   {
     name: "JavaScript",
     icon: <img src="/icons/javascript.png" className="w-7 h-7" />,
