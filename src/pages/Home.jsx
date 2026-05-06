@@ -100,10 +100,6 @@ const Home = () => {
 
           {/* KANAN → TEXT */}
           <div className="md:w-1/2 flex flex-col items-start text-left">
-            <motion.div>
-              <AnimatedGradientTextDemo />
-            </motion.div>
-
             <motion.h1 className="text-4xl md:text-4xl font-bold mb-2 mt-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
               WELCOME TO MY
               <span className="block mt-1 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
@@ -137,13 +133,17 @@ const Home = () => {
                   " Saya adalah individu yang memiliki ketertarikan tinggi dalam pengembangan keterampilan dan pengalaman profesional. Portofolio ini berisi kumpulan proyek, pencapaian, dan pengalaman yang telah saya kerjakan."
                 }
               />
+
+              <motion.div className="mt-4">
+                <AnimatedGradientTextDemo />
+              </motion.div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
             >
-              <Skills />
+              {/* <Skills /> */}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -343,7 +343,7 @@ hover:border-blue-500 hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-[0_
                 "Jalanin aja dulu yang ada di depan mata."
               </div>
               <div className="flex flex-row sm:flex-row gap-4 mt-8 justify-center md:justify-start items-center">
-                <ButtonMovingBorder
+                {/*   <ButtonMovingBorder
                   as="a"
                   href="/cv.pdf"
                   download
@@ -363,7 +363,7 @@ hover:border-blue-500 hover:bg-slate-50 dark:hover:bg-slate-800 hover:shadow-[0_
 "
                 >
                   <FaDownload /> Download CV
-                </ButtonMovingBorder>
+                </ButtonMovingBorder> */}
                 <ButtonMovingBorder
                   as="a"
                   href="#projects"

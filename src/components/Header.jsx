@@ -176,7 +176,7 @@ const Header = () => {
                 WebkitClipPath: isMenuOpen ? "none" : CLIP_PATH,
                 clipPath: isMenuOpen ? "none" : CLIP_PATH,
               }}
-              className={`pt-2 ${isMenuOpen ? "pb-0" : "pb-3"} relative z-20 pointer-events-auto transition-all duration-300 border-b-4 border-cyan-400 lg:border-b-0
+              className={`pt-2 ${isMenuOpen ? "pb-0" : "pb-3"} relative z-20 pointer-events-auto transition-all duration-300 border-b-4 border-blue-400 lg:border-b-0
               
                 ${
                   isMenuOpen
@@ -271,7 +271,7 @@ const Header = () => {
                       <NavLink href="#about">About</NavLink>
                       <NavLink href="#contact">Contact</NavLink>
                     </ul>
-                    <button
+                    {/*     <button
                       onClick={handleAdminAccess}
                       className="flex items-center gap-2 dark:text-slate-400 text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 pointer-events-auto"
                       title={
@@ -281,7 +281,7 @@ const Header = () => {
                       <FaShieldAlt
                         className={`text-lg ${isAuthenticated ? "text-blue-500" : "currentColor"}`}
                       />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </nav>

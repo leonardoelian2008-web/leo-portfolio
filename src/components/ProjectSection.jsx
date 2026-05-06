@@ -751,11 +751,11 @@ function ProjectSection() {
       label: "Projects",
       icon: <PiCodeBold className="text-[1.7em] mb-1" />,
     },
-    {
-      id: "Certificate",
-      label: "Certificates",
-      icon: <LuBadge className="text-[1.5em] mb-1" />,
-    },
+    //  {
+    //    id: "Certificate",
+    //  label: "Certificates",
+    //    icon: <LuBadge className="text-[1.5em] mb-1" />,
+    //  },
     {
       id: "Tech Stack",
       label: "APP",
@@ -846,7 +846,7 @@ function ProjectSection() {
 
       <div className="w-full">
         <div className="flex justify-center mb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-xl mx-auto">
             {tabs.map((tab) => (
               <BorderGlow
                 key={tab.id}

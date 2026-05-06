@@ -18,15 +18,15 @@ export function AnimatedGradientTextDemo() {
           WebkitClipPath: "padding-box",
         }}
       />
-      😊😊
+      😊
       <AnimatedGradientText
         className="text-sm font-medium"
         colorFrom="#4053ffff"
         colorTo="#40ecffff"
       >
-        SANTAI AJA KAWANDD
+        FROM MINES TO ZERO
       </AnimatedGradientText>
-      <ChevronRight className="ml-1 size-4 mb-2 mt-1 dark:stroke-neutral-500 stroke-blue-600 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+      <ChevronRight className="ml-1 size-4 mb-2 mt-1 dark:stroke-neutral-600 stroke-blue-600 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
     </div>
   );
 }

@@ -114,7 +114,7 @@ const Contact = () => {
             Mari Hijaukan dan Hidupkan Dunia
           </p>
 
-          <button
+          {/*   <button
             onClick={() => {
               if (isAuthenticated) {
                 setIsAdminOpen(true);
@@ -125,8 +125,8 @@ const Contact = () => {
             className="absolute top-0 right-0 bg-slate-800/50 hover:bg-slate-700/50 backdrop-blur-sm p-3 rounded-full border border-slate-600/50 hover:border-blue-400/50 transition-all duration-300 group"
             title={isAuthenticated ? "Admin Panel" : "Admin Login"}
           >
-            <FaCog className="text-slate-400 group-hover:text-blue-400 transition-colors duration-300 group-hover:rotate-90" />
-          </button>
+                  <FaCog className="text-slate-400 group-hover:text-blue-400 transition-colors duration-300 group-hover:rotate-90" /> 
+          </button> */}
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
